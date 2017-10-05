@@ -6,7 +6,7 @@ Images: python:2.7-onbuild, redis, mysql
 ## To DO:  
 1) Run redis docker instance with name "username-redis"
 2) Run mysql docker instance with name "username-mysql"
-3) update app.py with new docker container names
+3) update app.py with new docker container names of redis and mysql
 4) Build python app image using Dockerfile by copying app.py and name the image as "username-pyapp"
 5) Run the image on external port starting from 30001.. which ever port is available
 
