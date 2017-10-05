@@ -4,11 +4,10 @@
 Images: python:2.7-onbuild, redis, mysql
 
 ## To DO:  
-1) Create a docker bridge network with your name
-2) Run redis docker instance with name "username-redis" with in the same network
-3) Run mysql docker instance with name "username-mysql" with in the same network
-4) Build python app image using Dockerfile by copying app.py and name the image as "username-pyapp"
-5) Run the image on external port starting from 30001.. which ever port is available with in the same network.
+1) Run redis docker instance with name "username-redis"
+2) Run mysql docker instance with name "username-mysql"
+3) Build python app image using Dockerfile by copying app.py and name the image as "username-pyapp"
+4) Run the image on external port starting from 30001.. which ever port is available
 
 ## Output:
 1) Initialise DB  
