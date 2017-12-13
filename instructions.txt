@@ -1,0 +1,15 @@
+create a docker network
+	docker network create my-network
+Pull image redis:latest from docker hub and run it in a container in my-network
+	docker pull redis:latest
+	docker run --name govind-redis --network my-network -it redis:latest
+pull image mysql:latest from docker hub and run it in a container in my-network
+	docker pull mysql:latest
+	docker run --name govind-mysql --network my-network -it mysql:latest
+create an image using the Dockerfile in this directory and run the image in my-network
+	docker build -t govind-pyapp .
+	docker run --name myapp --network my-network -it -p 30001:5000 govind-pyapp
+	(-p means run on specified port..here we are mapping 30001 port of base system to 5000 port of docker container)
+	(as we are running app.py on 5000 port )
+after that u can run the commands in readme.md to verify ur app
+alternatively u can access localhost:30001/init  in browser to see whether db initialized

@@ -13,9 +13,9 @@ import json
 
 app = Flask(__name__)
 startTime = datetime.now()
-R_SERVER = redis.Redis(host=os.environ.get('REDIS_HOST', 'redis'), port=6379)
-db = MySQLdb.connect("mysql","root","password")
-cursor = db.cursor()
+R_SERVER = redis.Redis(host=os.environ.get('REDIS_HOST', 'govind-redis'), port=6379) # same explanation as below line
+db = MySQLdb.connect("govind-mysql","root","dockermysql") # govind-mysql is the hostname of the server where mysql is running..here we are running mysql in govind-mysql container
+cursor = db.cursor()  # if we run mysql,redis in localhost then we need to replace those names with 'localhost'
 
 @app.route('/init')
 def init():
